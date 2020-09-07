@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-const fetchShow = () => {
+export const fetchShow = (endpoint) => {
 	return axios
 		.get(
-			"https://api.tvmaze.com/singlesearch/shows?q=stranger-things&embed=episodes"
+			`https://api.tvmaze.com/singlesearch/shows?q=${endpoint}&embed=episodes`
 		)
 		.then((res) => {
 			console.log(res);
@@ -16,4 +15,4 @@ const fetchShow = () => {
 		});
 };
 
-export default fetchShow;
+
